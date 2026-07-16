@@ -13,7 +13,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse
 
 app = FastAPI()
-app.mount('/static',StaticFiles(directory='Static'),name='static')
+app.mount('/static',StaticFiles(directory='static'),name='static')
 template = Jinja2Templates(directory = 'templates')
 
 @app.get('/home-page')
