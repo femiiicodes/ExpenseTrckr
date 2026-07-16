@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | ExpenseTrckr</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/login.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">ExpenseTrckr</div>
+    </nav>
+
+    <main class="container">
+
+        <div class="login-card">
+
+            <h1>Welcome Back</h1>
+
+            <p class="subtitle">
+                Log in to continue tracking your expenses.
+            </p>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your username"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="login-btn">
+                    Login
+                </button>
+
+            </form>
+
+            <div class="links">
+
+                <a href="#">Forgot Password?</a>
+
+                <p>
+                    Don't have an account?
+                    <a href="/users/register-page">Register</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+<script src="{{url_for('static',path='js/base.js')}}"></script>
+</body>
+</html>

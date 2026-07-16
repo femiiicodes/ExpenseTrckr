@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Expense | ExpenseTrckr</title>
+    <link rel="stylesheet" href="{{url_for('static',path='css/edit-expense.css')}}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">ExpenseTrckr</div>
+    </nav>
+
+    <main class="container">
+
+        <div class="card">
+
+            <h1>Edit Expense</h1>
+            <p class="subtitle">
+                Update the details of your expense.
+            </p>
+
+            <form id="editExpenseForm">
+
+    <div class="expense-meta">
+        <span class="meta-label">Created:</span>
+        <span id="created_at">10 July 2026, 2:35 PM</span>
+    </div>
+
+    <div class="form-group">
+        <label for="title">Expense Title</label>
+        <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="e.g. Lunch at Cafeteria"
+            required
+        >
+    </div>
+
+    <div class="form-group">
+        <label for="amount">Amount (₦)</label>
+        <input
+            type="number"
+            id="amount"
+            name="amount"
+            step="0.01"
+            placeholder="0.00"
+            required
+        >
+    </div>
+
+    <div class="button-row">
+        <button type="submit" class="save-btn">
+            💾 Save Changes
+        </button>
+
+        <button
+            type="button"
+            id="deleteExpense"
+            class="delete-btn">
+            🗑 Delete Expense
+        </button>
+    </div>
+
+</form>
+
+        </div>
+
+    </main>
+<script src="{{url_for('static',path='js/base.js')}}"></script>
+</body>
+</html>

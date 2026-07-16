@@ -1,0 +1,176 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+}
+
+.navbar{
+    background:#2563eb;
+    color:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 40px;
+}
+
+.navbar h1{
+    font-size:30px;
+}
+
+.back-btn{
+    text-decoration:none;
+    color:white;
+    border:1px solid white;
+    padding:10px 18px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:white;
+    color:#2563eb;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:60px 20px;
+}
+
+.form-card{
+
+    width:100%;
+    max-width:500px;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:35px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.form-card h2{
+
+    color:#2563eb;
+    margin-bottom:8px;
+}
+
+.subtitle{
+
+    color:#777;
+    margin-bottom:30px;
+}
+
+.form-group{
+
+    display:flex;
+    flex-direction:column;
+
+    margin-bottom:22px;
+}
+
+.form-group label{
+
+    margin-bottom:8px;
+    font-weight:600;
+    color:#333;
+}
+
+.form-group input{
+
+    padding:14px;
+
+    border:1px solid #d8d8d8;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+.form-group input:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+}
+
+.submit-btn{
+
+    width:100%;
+
+    border:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.submit-btn:hover{
+
+    background:#1d4ed8;
+}
+
+@media(max-width:600px){
+
+    .navbar{
+
+        padding:15px 20px;
+    }
+
+    .navbar h1{
+
+        font-size:24px;
+    }
+
+    .form-card{
+
+        padding:25px;
+    }
+}
+.add-expense-btn{
+    display:inline-block;
+
+    margin-top:20px;
+    padding:12px 24px;
+
+    background:#2563eb;
+    color:white;
+
+    text-decoration:none;
+    text-align:center;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    transition:background .3s ease;
+}
+
+.add-expense-btn:hover{
+    background:#1d4ed8;
+}

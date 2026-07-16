@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseTrckr</title>
+    <link rel="stylesheet" href="{{url_for('static',path='css/expenses-page.css')}}">
+</head>
+<body>
+
+<nav class="navbar">
+    <h1>ExpenseTrckr</h1>
+
+    <button class="logout-btn">
+        Log Out
+    </button>
+</nav>
+
+<main class="container">
+
+    {% if not today_exists %}
+    <details class="day-card" open>
+
+        <summary>
+            Today
+        </summary>
+
+        <div class="empty-state">
+            <h3>No record found</h3>
+            <p>You haven't added any expenses today.</p>
+
+            <<a href="/expenses/add-expense-page" class="add-expense-btn">
+    + Add New Expense
+</a>
+        </div>
+
+    </details>
+    {% endif %}
+
+    {% for exp in grouped_items %}
+
+        {% if exp.day == today %}
+
+        <details class="day-card" open>
+
+            <summary>
+                Today
+            </summary>
+
+            <div class="expense-list">
+
+                {% for expense in exp.expenses %}
+
+                <div class="expense-item">
+
+                    <span class="expense-title">
+                        {{ expense.title }}
+                    </span>
+
+                    <div class="expense-actions">
+
+                        <span class="expense-amount">
+                            ₦{{ expense.amount }}
+                        </span>
+
+                        <span class="expense-time">
+                            {{ "%02d"|format(expense.time.hour) }}:{{ "%02d"|format(expense.time.minute) }}
+                        </span>
+
+                        <a href="/expenses/edit-expense-page/{{ expense.id }}" class="edit-btn">
+                            ✏ Edit
+                        </a>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+            <div class="day-total">
+                Total: ₦{{ exp.total }}
+            </div>
+
+            <a href="/expenses/add-expense-page" class="add-expense-btn">
+    + Add New Expense
+</a>
+
+        </details>
+
+        {% else %}
+
+        <details class="day-card">
+
+            <summary>
+                {{ exp.day }}
+            </summary>
+
+            <div class="expense-list">
+
+                {% for expense in exp.expenses %}
+
+                <div class="expense-item">
+
+                    <span class="expense-title">
+                        {{ expense.title }}
+                    </span>
+
+                    <div class="expense-actions">
+
+                        <span class="expense-amount">
+                            ₦{{ expense.amount }}
+                        </span>
+
+                        <span class="expense-time">
+                            {{ "%02d"|format(expense.time.hour) }}:{{ "%02d"|format(expense.time.minute) }}
+                        </span>
+
+                        <a href="/expenses/edit-expense-page/{{ expense.id }}" class="edit-btn">
+                            ✏ Edit
+                        </a>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+            <div class="day-total">
+                Total: ₦{{ exp.total }}
+            </div>
+
+        </details>
+
+        {% endif %}
+
+    {% endfor %}
+
+</main>
+
+</body>
+</html>

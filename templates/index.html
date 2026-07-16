@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseTrckr</title>
+    <link rel="stylesheet" href="{{url_for('static',path='css/index.css')}}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">ExpenseTrckr</div>
+
+        <div class="nav-links">
+            <a href="/users/login-page">Login</a>
+            <a href="/users/register-page">Register</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Want to track your spending habits?
+                <br>
+                Welcome to ExpenseTrckr
+            </h1>
+
+            <p>
+                Take control of your finances, monitor expenses,
+                and build better money habits with ease.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn primary-btn">Get Started</a>
+                <a href="#" class="btn secondary-btn">Learn More</a>
+            </div>
+
+        </div>
+
+    </section>
+<script src="{{url_for('static',path='js/base.js')}}" defer></script>
+</body>
+</html>
